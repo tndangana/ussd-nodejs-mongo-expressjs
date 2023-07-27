@@ -37,7 +37,7 @@ export const findAll = async (req, res, next) => {
 export const findOne = async (req, res, next) => {
   try {
     // Call the getProductById function with the product ID to retrieve the product
-    const product = await getProductById(req.params.productId);
+    const product = await getProductById(req.params.id);
     res.status(200).json(product);
   } catch (error) {
     // If an error occurs during the retrieval of the product, handle the error appropriately
@@ -49,7 +49,7 @@ export const findOne = async (req, res, next) => {
 export const update = async (req, res, next) => {
   try {
     // Call the updateProductById function with the product ID and request body to update the product
-    const product = await updateProductById(req.params.productId, req.body);
+    const product = await updateProductById(req.params.id, req.body);
     res.json(product);
   } catch (error) {
     // If an error occurs during the update of the product, handle the error appropriately
@@ -61,7 +61,7 @@ export const update = async (req, res, next) => {
 export const deleteProduct = async (req, res, next) => {
   try {
     // Call the deleteProductById function with the product ID to delete the product
-    const product = await deleteProductById(req.params.productId);
+    const product = await deleteProductById(req.params.id);
     res.json(product);
   } catch (error) {
     // If an error occurs during the deletion of the product, handle the error appropriately
